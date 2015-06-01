@@ -1,8 +1,14 @@
 $(function(){
+	/**
+	 * 이미지 미리보기 가능 하도록 태그 지정
+	 */
 	$("#imageList").MultiFile({
 		list : "#imagePreview"
 	});
 
+	/**
+	 * VR 이미지 업로드 저장
+	 */
 	$("#btnSubmit").click(function(){
 		if($.trim($("#file_id").val()) == ""){
 			alert("상품코드는 필수 입니다.");

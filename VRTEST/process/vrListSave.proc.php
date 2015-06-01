@@ -7,7 +7,7 @@ $file_width = (int)$_POST['file_width'];
 $file_height = (int)$_POST['file_height'];
 
 if($file_id == null || $file_id == 0){
-	WebJavascriptUtil::alertAfterLocation('ÀúÀå¿¡ ½ÇÆĞ ÇÏ¿´½À´Ï´Ù.\nVR ¾ÆÀÌµğ°¡ Á¸Àç ÇÏÁö ¾Ê½À´Ï´Ù.', '/VRTEST/admin/');
+	WebJavascriptUtil::alertAfterLocation('ì €ì¥ì— ì‹¤íŒ¨ í•˜ì˜€ìŠµë‹ˆë‹¤.\nVR ì•„ì´ë””ê°€ ì¡´ì¬ í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.', '/VRTEST/admin/');
 }
 if($file_width == null || $file_width == 0){
 	$file_width = 800;
@@ -16,11 +16,14 @@ if($file_height == null || $file_height == 0){
 	$file_height = 800;
 }
 
-$uploadDir = '/home/ubuntu/www/ojtProject/VRTEST/img/';
+$uploadDir = '/home/ubuntu/www/ojtProject/VRTEST/img/'; //ì´ë¯¸ì§€ ì—…ë¡œë“œ ë””ë ‰í† ë¦¬
 if(is_dir($uploadDir) === false){
 	mkdir($uploadDir);
 }
 
+/**
+ * ë‹¤ì¤‘ ì´ë¯¸ì§€ ì—…ë¡œë“œ ì²˜ë¦¬ ìˆ˜í–‰
+ */
 $files = $_FILES['files'];
 if(count($files['error']) > 0){
 	$result_upload_file_list = array();
@@ -49,6 +52,9 @@ if(count($files['error']) > 0){
 	$result_upload_file_list['frames'] = $frames;
 }
 
+/**
+ * ìºì‰¬ íŒŒì¼ ì €ì¥ ìŠ¤í¬ë¦½íŠ¸ ì‹¤í–‰
+ */
 try{
 	$oCacheUpload = new CacheUpload();
 	$oCacheUpload->setUploadDirectory('/home/ubuntu/www/ojtProject/VRTEST/cache');
@@ -56,11 +62,16 @@ try{
 	$oCacheUpload->setUploadData(json_encode($result_upload_file_list));
 	$oCacheUpload->executeUpload();
 
-	WebJavascriptUtil::alertAfterLocation('ÀúÀå µÇ¾ú½À´Ï´Ù. Æ÷ÀÎÅÍ ¼³Á¤ °ü¸®ÀÚ·Î ÀÌµ¿ ÇÕ´Ï´Ù.', '/VRTEST/admin/buttonSetting.php?file_id='.$file_id, 'parent');
+	WebJavascriptUtil::alertAfterLocation('ì €ì¥ ë˜ì—ˆìŠµë‹ˆë‹¤. í¬ì¸í„° ì„¤ì • ê´€ë¦¬ìë¡œ ì´ë™ í•©ë‹ˆë‹¤.', '/VRTEST/admin/buttonSetting.php?file_id='.$file_id, 'parent');
 }catch(Exception $e){
-	WebJavascriptUtil::alertAfterLocation('ÀúÀå¿¡ ½ÇÆĞ ÇÏ¿´½À´Ï´Ù.\n'.$e->getMessage(), '/VRTEST/admin/', 'parent');
+	WebJavascriptUtil::alertAfterLocation('ì €ì¥ì— ì‹¤íŒ¨ í•˜ì˜€ìŠµë‹ˆë‹¤.\n'.$e->getMessage(), '/VRTEST/admin/', 'parent');
 }
 
+/**
+ * ì´ë¯¸ì§€ í™•ì¥ì ì¶”ì¶œ ë©”ì†Œë“œ
+ * @param String $fileName
+ * @return String
+ */
 function getFileExt($fileName){
 	$path = pathinfo($fileName);
 	return strtoupper($path['extension']);

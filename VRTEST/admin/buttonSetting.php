@@ -4,9 +4,12 @@ require_once '../lib/util/WebJavascriptUtil.php';
 
 $file_id = (int)$_GET['file_id'];
 if($file_id == null || $file_id == 0){
-	WebJavascriptUtil::alertAfterLocation('VR ¾ÆÀÌµğ°¡ Á¸Àç ÇÏÁö ¾Ê½À´Ï´Ù.', '/VRTEST/admin/');
+	WebJavascriptUtil::alertAfterLocation('VR ì•„ì´ë””ê°€ ì¡´ì¬ í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.', '/VRTEST/admin/');
 }
 
+/**
+ * ê¸°ì¡´ ë°ì´í„° ì¡°íšŒ
+ */
 $data = json_decode(file_get_contents('../cache/'.$file_id.'.json'),true);
 
 $oTpl = new Template('../tpl/admin/');

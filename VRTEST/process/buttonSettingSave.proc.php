@@ -7,8 +7,14 @@ if($file_id == null || $file_id == 0){
 	WebJavascriptUtil::alertAfterLocation('저장에 실패 하였습니다.\nVR 아이디가 존재 하지 않습니다.', '/VRTEST/admin/');
 }
 
+/**
+ * 기존 데이터 조회
+ */
 $data = json_decode(file_get_contents('../cache/'.$file_id.'.json'),true);
 
+/**
+ * 입력한 Point 정보 데이터 셋팅
+ */
 $frame_list = $_POST['frame_list'];
 if(count($frame_list) > 0){
 	$annotaion_list = array();
@@ -29,8 +35,14 @@ if(count($frame_list) > 0){
 	}
 }
 
+/**
+ * 기존 데이터에 입력한 Point 정보 추가
+ */
 $data['annotation_list'] = $annotaion_list;
 
+/**
+ * 캐쉬 파일 저장 스크립트 실행
+ */
 try{
 	$oCacheUpload = new CacheUpload();
 	$oCacheUpload->setUploadDirectory('/home/ubuntu/www/ojtProject/VRTEST/cache');
