@@ -1,0 +1,51 @@
+#wrap{
+	width:1300px;
+}
+#wrap .image_layer{
+	position:relative;
+	margin-top:10px;
+}
+#wrap .image_layer.hide{
+	display:none;
+}
+#wrap .image_layer.show{
+	display:block;
+}
+#wrap .image_layer img{
+	float:left;
+}
+#wrap .image_layer .option_layer{
+	float:left;
+}
+#wrap .button_layer{
+	text-align:center;
+	margin-top:20px;
+}
+#wrap .button_layer #btnSave{
+	width:150px;
+	height:50px;
+}
+#wrap .find_image_layer{
+	width:500px;
+	border:10px solid #CCC;
+	padding:15px;
+	position:absolute;
+	display:none;
+	background-color:#FFFFFF;
+}
+#wrap .find_image_layer .button_layer{
+	margin-top:20px;
+	margin-right:20px;
+	text-align:right;
+}
+#wrap .find_image_layer .button_layer input{
+	width:100px;
+	height:40px;
+}
+.point_symbol{
+	position:absolute;
+	background:url("/VRTEST/img/pointer.png") no-repeat;
+	background-size:contain;
+	width:30px;
+	height:30px;
+}
