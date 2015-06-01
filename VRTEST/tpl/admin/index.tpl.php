@@ -11,7 +11,9 @@
 						<input type="text" id="file_id" name="file_id" placeholder="상품코드 입력" />
 					</div>
 					<div style="margin-bottom:10px">
-						<input type="text" id="file_width" name="file_width" placeholder="가로폭" /> X <input type="text" id="file_height" name="file_height" placeholder="세로폭" />
+						<input type="text" id="file_width" name="file_width" placeholder="가로폭" />
+						&nbsp;X&nbsp;
+						<input type="text" id="file_height" name="file_height" placeholder="세로폭" />
 					</div>
 				</div>
 				<div>
@@ -25,7 +27,7 @@
 		</form>
 		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-placeholder/2.0.8/jquery.placeholder.min.js"></script>
+		<script src="/VRTEST/js/lib/plugin/jquery.placeholder.js"></script>
 		<script src="/VRTEST/js/lib/plugin/jquery.form.js"></script>
 		<script src="/VRTEST/js/lib/plugin/jquery.MetaData.js"></script>
 		<script src="/VRTEST/js/lib/plugin/jquery.MultiFile.min.js"></script>
