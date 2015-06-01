@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
-		<form name="frmDocument" action="../process/vrListSave.proc.php" method="post" enctype="multipart/form-data" target="upload-frame">
+		<form name="frmDocument" enctype="multipart/form-data">
 			<div style="margin-top:20px;margin-left:20px;">
 				<div style="margin-bottom:20px">
 					<div style="margin-bottom:10px">

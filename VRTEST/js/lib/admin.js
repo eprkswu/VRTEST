@@ -15,6 +15,9 @@ $(function(){
 			$("#file_height").focus();
 		}else{
 			var frm = document.frmDocument;
+			frm.action = "../process/vrListSave.proc.php";
+			frm.method = "post";
+			frm.target = "upload-frame";
 			frm.submit();
 		}
 	});
